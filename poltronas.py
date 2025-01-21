@@ -14,16 +14,17 @@ class Poltrona:
 
     def __str__(self):
         if self._esta_ocupada:
-            return f"Poltrona {self._id} - Cor: {self._cor} - Ocupada por {self._cliente_atual['Nome']}"
+            return f"Poltrona {self._id} - Cor: {self._cor} - Ocupada por {self._cliente_atual.nome}"
         else:
             return f"Poltrona {self._id} - Cor: {self._cor} - Disponível"
 
     @staticmethod
-    def criar_poltronas():
+    def criar_poltronas(quantidade=5):
         cores = ['Vermelha', 'Azul', 'Verde', 'Preta', 'Branca']
         poltronas = []
-        for i in range(5):
+        for i in range(quantidade):
             poltrona = Poltrona(id=f'P{i + 1}', cor=cores[i])
             poltronas.append(poltrona)
         return poltronas
+
 

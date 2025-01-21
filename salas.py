@@ -8,7 +8,7 @@ class Sala:
 
     def configurar_sala(self, informacoes_filme, clientes):
         self.informacoes_filme = informacoes_filme
-        self._poltronas = Poltrona.criar_poltronas()
+        self._poltronas = Poltrona.criar_poltronas(5)
 
         if len(clientes) > len(self._poltronas):
             print(f"A sala {self.nome_sala} está cheia. Não é possível acomodar mais de {len(self._poltronas)} pessoas.")
@@ -19,7 +19,7 @@ class Sala:
 
     def exibir_detalhes(self):
         print(f"Sala: {self.nome_sala}")
-        print(f"Filme em exibição: {self.informacoes_filme['nome']} - Diretor: {self.informacoes_filme['diretor']}")
+        print(f"Filme em exibição: {self.informacoes_filme.nome} - Diretor: {self.informacoes_filme.diretor}")
         print("\nPoltronas na sala:")
         for poltrona in self._poltronas:
             print(poltrona)
